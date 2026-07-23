@@ -1,0 +1,123 @@
+
+document_task:
+  description: >
+    Read the uploaded previous and current patient reports.
+
+    Extract all important medical information including:
+
+    - Patient Name
+    - Age
+    - Gender
+    - Visit Date
+    - Blood Pressure
+    - Heart Rate
+    - Blood Sugar
+    - HbA1c
+    - Cholesterol
+    - Weight
+    - Diagnosis
+    - Medications
+    - Doctor Notes
+
+    Return the extracted information in structured JSON.
+
+  expected_output: >
+    Valid JSON containing all extracted patient information.
+
+  agent: document_reader
+
+
+history_task:
+  description: >
+    Analyze the patient's previous medical records.
+
+    Identify:
+
+    - Chronic diseases
+    - Previous diagnoses
+    - Medication history
+    - Allergies (if available)
+    - Previous treatment
+    - Health history summary
+
+  expected_output: >
+    A complete medical history summary.
+
+  agent: medical_history
+
+
+comparison_task:
+  description: >
+    Compare the previous report and the latest report.
+
+    Identify:
+
+    - Improvements
+    - Worsening conditions
+    - Stable health parameters
+    - Newly diagnosed diseases
+    - Medication changes
+
+  expected_output: >
+    A structured comparison report.
+
+  agent: health_comparison
+
+
+risk_task:
+  description: >
+    Predict possible future health risks using the patient's
+    previous history and current medical condition.
+
+    Include:
+
+    - Diabetes Risk
+    - Heart Disease Risk
+    - Kidney Disease Risk
+    - Stroke Risk
+    - Lifestyle Risk
+
+  expected_output: >
+    Risk assessment with explanations.
+
+  agent: risk_prediction
+
+
+recommendation_task:
+  description: >
+    Generate personalized healthcare recommendations.
+
+    Include:
+
+    - Diet
+    - Exercise
+    - Medication adherence
+    - Lifestyle improvements
+    - Recommended follow-up tests
+    - Next doctor visit
+
+  expected_output: >
+    Professional clinical recommendations.
+
+  agent: recommendation
+
+
+report_task:
+  description: >
+    Generate a final patient health report using outputs from all previous tasks.
+
+    The report must include:
+
+    - Patient Details
+    - Medical History
+    - Previous Report Summary
+    - Current Report Summary
+    - Health Comparison
+    - Risk Assessment
+    - Recommendations
+    - Overall Health Status
+
+  expected_output: >
+    A professional healthcare report ready for PDF generation.
+
+  agent: report_generator
